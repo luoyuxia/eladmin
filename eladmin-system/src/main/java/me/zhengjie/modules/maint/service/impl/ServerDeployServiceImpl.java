@@ -45,7 +45,8 @@ public class ServerDeployServiceImpl implements ServerDeployService {
 
     @Override
     public PageResult<ServerDeployDto> queryAll(ServerDeployQueryCriteria criteria, Pageable pageable){
-        Page<ServerDeploy> page = serverDeployRepository.findAll((root, criteriaQuery, criteriaBuilder) -> QueryHelp.getPredicate(root,criteria,criteriaBuilder),pageable);
+        Page<ServerDeploy> page = serverDeployRepository.findAll((root, criteriaQuery, criteriaBuilder)
+                -> QueryHelp.getPredicate(root,criteria,criteriaBuilder),pageable);
         return PageUtil.toPage(page.map(serverDeployMapper::toDto));
     }
 

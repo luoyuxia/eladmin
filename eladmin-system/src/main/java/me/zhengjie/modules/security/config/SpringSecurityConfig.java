@@ -102,6 +102,7 @@ public class SpringSecurityConfig {
                 // 文件
                 .antMatchers("/avatar/**").permitAll()
                 .antMatchers("/file/**").permitAll()
+                .antMatchers("/api/**").permitAll()
                 // 阿里巴巴 druid
                 .antMatchers("/druid/**").permitAll()
                 // 放行OPTIONS请求
@@ -119,9 +120,9 @@ public class SpringSecurityConfig {
                 .antMatchers(HttpMethod.DELETE, anonymousUrls.get(RequestMethodEnum.DELETE.getType()).toArray(new String[0])).permitAll()
                 // 所有类型的接口都放行
                 .antMatchers(anonymousUrls.get(RequestMethodEnum.ALL.getType()).toArray(new String[0])).permitAll()
-                // 所有请求都需要认证
-                .anyRequest().authenticated()
-                .and().apply(securityConfigurerAdapter())
+//                // 所有请求都需要认证
+//                .anyRequest().authenticated()
+//                .and().apply(securityConfigurerAdapter())
                 .and().build();
     }
 
