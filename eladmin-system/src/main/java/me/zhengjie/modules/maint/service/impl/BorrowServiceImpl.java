@@ -2,13 +2,10 @@ package me.zhengjie.modules.maint.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import me.zhengjie.modules.maint.domain.Borrow;
-import me.zhengjie.modules.maint.domain.Device;
 import me.zhengjie.modules.maint.repository.BorrowRepository;
-import me.zhengjie.modules.maint.repository.DeviceRepository;
 import me.zhengjie.modules.maint.service.BorrowService;
 import me.zhengjie.modules.maint.service.dto.BorrowDTO;
 import me.zhengjie.modules.maint.service.dto.DeviceStockQueryCriteria;
-import me.zhengjie.modules.maint.service.dto.StockDTO;
 import me.zhengjie.utils.PageResult;
 import me.zhengjie.utils.PageUtil;
 import org.springframework.data.domain.Page;

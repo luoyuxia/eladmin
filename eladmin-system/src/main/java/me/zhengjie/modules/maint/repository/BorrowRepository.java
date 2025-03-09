@@ -11,13 +11,8 @@ import java.util.List;
 
 public interface BorrowRepository extends JpaRepository<Borrow, String>, JpaSpecificationExecutor<Borrow> {
 
-
-
     @Query(value =
             "select borrow.`device_id` as id, u.`user_name` as userName\n" +
             "from borrow join user u on borrow.user_id = u.user_id;", nativeQuery = true)
     List<BorrowDTO> getBorrows();
-
-
-
 }
